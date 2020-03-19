@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+    body{
+        text-align: center;
+    }
+
+    div{
+        margin-left: auto;/*ポイント01*/
+        margin-right: auto;/*ポイント01*/
+    }
+
+</style>
+</head>
+<body>
+    読取場所:{{place}}
+    <div>
+        <table border="1">
+            <tr>
+                <th>台帳</th>
+                <th>読取</th>
+            </tr>
+        {% for d_place in d_place_list %}{% set A_list_loop = loop %}
+        {% for d_code in d_code_list %}
+        {% if loop.index==A_list_loop.index %}
+            <tr>
+                <th>{{d_place}}</th>
+                <th>{{d_code}}</th>
+            </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        </table>
+    </div>
+</body>

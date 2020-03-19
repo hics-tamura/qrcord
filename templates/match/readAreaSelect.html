@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <title>QRコード読取エリア選択画面</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/static/css/read_match.css" />
+</head>
+  <body>
+    <h1>QRコード読取エリア選択</h1>
+    <form id="form1" method="POST" action="{{url_for('read')}}">
+      <select name="plase">
+        <option value="４Ｎ１">４Ｎ１</option>
+        <option value="４Ｎ２">４Ｎ２</option>
+        <option value="４Ｎ３">４Ｎ３</option>
+        <option value="４Ｓ１">４Ｓ１</option>
+        <option value="４Ｓ２">４Ｓ２</option>
+        <option value="４Ｓ３">４Ｓ３</option>
+        <option value="４Ｓ４">４Ｓ４</option>
+        <option value="４階フロアー">４階フロアー</option>
+        <option value="５Ｎ１">５Ｎ１</option>
+        <option value="５Ｎ２">５Ｎ２</option>
+        <option value="５Ｎ３">５Ｎ３</option>
+        <option value="５Ｓ１">５Ｓ１</option>
+        <option value="５Ｓ２">５Ｓ２</option>
+        <option value="５階フロアー">５階フロアー</option>
+        <option value="５階資料室">５階資料室</option>
+        <option value="６Ｎ１">６Ｎ１</option>
+        <option value="６Ｎ２">６Ｎ２</option>
+        <option value="６Ｎ３">６Ｎ３</option>
+        <option value="６Ｎ４">６Ｎ４</option>
+        <option value="６Ｓ１">６Ｓ１</option>
+        <option value="６Ｓ２">６Ｓ２</option>
+        <option value="６Ｓ３">６Ｓ３</option>
+        <option value="６Ｓ４">６Ｓ４</option>
+        <option value="６階フロアー">６階フロアー</option>
+        <option value="６階資料室">６階資料室</option>
+        <option value="６階募集倉庫">６階募集倉庫</option>
+        <option value="職員室">職員室</option>
+        <option value="旧喫煙室">旧喫煙室</option>
+        <option value="図書室">図書室</option>
+        <option value="理事長室">理事長室</option>
+      </select>
+      <br /><br />
+      <input type="submit" value="次へ" />
+      <input type="button" value="Topへ戻る" onclick="location.href='/';" />
+    </form>
+  </body>
+</html>

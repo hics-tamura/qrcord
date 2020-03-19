@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <title>QRコード突合結果画面</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>QRコード突合結果画面</h1>
+    <p id="place">ＱＲコードの読取場所：{{plase}}</p><br>
+    <!-- <p id="count">読取したＱＲコードの個数：{{count}}</p><br>　-->
+    <p id="qr_list">結果<br></p>
+    <form action="{{url_for('update')}}" method="post">
+        <input type="submit" value="更新">
+            <input type="hidden" name="place" value={{plase}}>
+        {% for d_plase in d_place_list %}{% set A_list_loop = loop %}
+            {% for d_code in d_list %}
+            {% if loop.index==A_list_loop.index %}
+                <input type="hidden" value={{d_code}} name="d_code">
+                <input type="hidden" value={{d_plase}} name="d_place">
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+    </form>
+    <button class="button_wrapper" type="button" onclick="location.href='/read_match.html';">選択画面へ戻る</button>
+    <br>
+    <div class="table_center">
+      <h2>突合結果一覧</h2>
+      <table border="1">
+        <tr>
+          <th>管理番号</th>
+          <th>読取番号</th>
+          <th>設置詳細使用者</th>
+          <th>機器名</th>
+          <th>更新ボタン</th>
+        </tr>
+        {% for i in range(mg_list_lng) %}
+          <tr>
+            <td><input type="text" value={{mg_list[i]}} /></td>
+            <td><input type="text" value={{qr_list[i]}} /></td>
+            <td><input type="text" value={{d_detail_list[i]}} /></td>
+            <td><input type="text" value={{d_machine_list[i]}} /></td>
+            <td><input type="button" value="更新" /></td>
+          </tr>
+          <form action="{{url_for('update')}}" method="post" >
+            <input type="hidden" name="updateCnt" value=i />
+          </form>
+          {% endfor %}
+      </table>
+      <br />
+      <h2>余剰端末一覧</h2>
+      <table border="1">
+        <tr>
+          <th>管理場所</th>
+          <th>読取番号</th>
+          <th>設置詳細使用者</th>
+          <th>機器名</th>
+          <th>更新ボタン</th>
+        </tr>
+        {% for i in range(mg_list_lng) %}
+          <tr>
+            <td><input type="text" value={{mg_list[i]}} /></td>
+            <td><input type="text" value={{qr_list[i]}} /></td>
+            <td><input type="text" value={{d_detail_list[i]}} /></td>
+            <td><input type="text" value={{d_machine_list[i]}} /></td>
+            <td><input type="button" value="更新" /></td>
+          </tr>
+          <form action="{{url_for('update')}}" method="post" >
+            <input type="hidden" name="updateCnt" value=i />
+          </form>
+          {% endfor %}
+      </table>
+    </div>
+    <div class="float_clear">
+    <form action="{{url_for('update')}}" method="post">
+        <input type="submit" value="更新">
+            <input type="hidden" name="place" value={{plase}}>
+        {% for d_plase in d_place_list %}{% set A_list_loop = loop %}
+            {% for d_code in d_list %}
+            {% if loop.index==A_list_loop.index %}
+                <input type="hidden" value={{d_code}} name="d_code">
+                <input type="hidden" value={{d_plase}} name="d_place">
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+    </form>
+    <button class="button_wrapper" type="button" onclick="location.href='/read_match.html';">選択画面へ戻る</button>
+    </div>
+    <br>
+
+</body>

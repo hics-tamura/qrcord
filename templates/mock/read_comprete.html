@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+    body{
+        text-align: center;
+        vertical-align:center;
+    }
+
+</style>
+</head>
+<body>
+    <p id="place">ＱＲコードの作成場所：{{plase}}</p><br>
+    <p id="count">作成したＱＲコードの個数：{{count}}</p><br>
+    <p id="qr_list">作成されたＱＲコード<br></p>
+    <div align="center">
+        <table border="1">
+            <tr>
+                <th>管理番号</th>
+            </tr>
+        {% for qrcode in qr_list %}
+            <tr>
+                <th>{{qrcode}}</th>
+            </tr>
+            
+        {% endfor %}
+        </table>
+    </div>
+    <br>
+    <button class="btn" type="button" onclick="location.href='/read_create.html';">選択画面へ戻る</button>
+</body>

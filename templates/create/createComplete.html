@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+  <head>
+    <title>ＱＲコード作成完了画面</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/static/css/result.css" />
+  </head>
+  <body>
+    <h1>ＱＲコード作成完了画面 [ 作成エリア : {{plase}} ]</h1>
+    <h2>作成ＱＲコード一覧</h2>
+    <div class="createList">
+      <table border="1">
+        <tr>
+          <th>管理番号</th>
+        </tr>
+        {% for qrcode in qr_list %}
+        <tr>
+          <td>{{qrcode}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <br>
+    <input type="button" value="作成エリア選択画面へ戻る"
+           onclick="location.href='/create/createAreaSelect.html';" />
+    <input type="button" value="TOPへ戻る" onclick="location.href='/';" />
+  </body>
+</html>

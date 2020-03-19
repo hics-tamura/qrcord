@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+body {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    background: #f8f6ef;
+}
+
+#page {
+    width: 800px;
+}
+
+h2 {
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+
+button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #a0522d;
+  border: dashed 1px #a0522d;
+  background: #f8f6ef;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 1.0em;
+}
+
+button:hover {
+  background: #8b4513;
+  color:#f8f6ef;
+}
+
+input.rec {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #808000;
+  border: dashed 1px #808000;
+  background: #f8f6ef;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 1.4em;
+}
+
+input.rec:hover {
+  background: #6b8e23;
+  color:#f8f6ef;
+}
+
+</style>
+
+<title>認識</title>
+</head>
+
+<body>
+
+  <form action="/send" method="POST">
+    <h2>たまごの画像</h2>
+    <div>
+      <input type="file" name="egg_pic"/>
+    </div>
+
+    <br>
+    <br>
+    
+    <h2>賞味期限の画像</h2>
+    <p></p>
+    <div>
+      <input type="file" name="day_pic"/>
+    </div>
+
+      <br><br>
+      <div>
+        <input type="submit" class="rec" value="認識"/>
+      </div>
+
+  </form>
+
+  <br><br>
+  <div>
+    <button type="button" onclick="location.href='/';">ホームへ戻る</button>
+  </div>
+
+</body>
+
+</html>
